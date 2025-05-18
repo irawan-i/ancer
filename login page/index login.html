@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Porsche Indonesia</title>
+    <link rel="stylesheet" href="../css/Style login dan landing.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login ke Porsche Indonesia</h2>
+        <form class="login-form" id="loginForm">
+            <div class="error-message" id="errorMsg"></div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+            <button type="Landing page.html">Login</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMsg');
+            if(username === "Nandana" && password === "Ancer656") {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = "../Landing page.html";
+            } else {
+                errorMsg.textContent = "Username atau password salah.";
+            }
+        });
+    </script>
+</body>
+</html>

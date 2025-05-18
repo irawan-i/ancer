@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche Indonesia</title>
+    <link rel="stylesheet" href="css/Style login dan landing.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://i.pinimg.com/736x/d4/b7/8e/d4b78ecd0206247b51b4034c3ba0a144.jpg" alt="Porsche Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="">Beranda</a></li>
+                <li><a href="https://finder.porsche.com/id/en-ID/dealer/search?condition=new&dealership=12442">Model</a></li>
+                <li><a href="https://www.google.com/maps/place/Porsche+Centre+Jakarta/@-6.2414461,106.7820627,789m/data=!3m2!1e3!4b1!4m6!3m5!1s0x2e69f119e3c5ae49:0x70eda3fd36063a8c!8m2!3d-6.2414461!4d106.7820627!16s%2Fg%2F1yf4rdy_w?entry=ttu&g_ep=EgoyMDI1MDUxNS4wIKXMDSoASAFQAw%3D%3D">Dealer</a></li>
+                <li><a href="https://dealer.porsche.com/id/jakarta/en-GB/Offers">Layanan</a></li>
+                <li><a href="login page/index login.html" class="btn-login" id="loginBtn">Login</a></li>
+                <li><a href="login page/index login.html" class="btn-logout" id="logoutBtn" style="display:none;">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Porsche Indonesia</h1>
+            <p>Temukan mobil impian Anda. Jelajahi model Porsche terbaru, layanan eksklusif, dan pengalaman berkendara tak tertandingi. Rasakan Dapur Pacu 6 silinder khas Porsche</p>
+            <a href="models" class="btn-primary">Lihat Model</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://files.porsche.com/filestore/image/multimedia/none/992-c2-modelimage-sideshot/thumbwhite/6a2b3e8e-0b2e-11e9-80c4-005056bbdc38;sD;twebp/porsche-thumbwhite.webp" alt="Porsche 911">
+        </div>
+    </section>
+    <section class="models">
+      <h2>Model Terpopuler</h2>
+       <a href="https://configurator.porsche.com/en-ID/model-start/dealer/12442/911" class="model-card-link">
+        <div class="model-list">
+            <div class="model-card">
+                <img src="https://files.porsche.com/filestore/image/multimedia/none/992-carrera-t-modelimage-sideshot/model/13105757-4ed8-11ed-80f7-005056bbdc38/porsche-model.png" alt="Porsche 911">
+                <h3>911</h3>
+            </div>
+       </a>
+       <a href="https://configurator.porsche.com/en-ID/model-start/dealer/12442/taycan" class="model-card-link">
+            <div class="model-card">
+                <img src="https://www.porsche-moscow.ru/photos/cars/custom/445646_6YHsbhmtalgx4wO6RWUQpOxEBnerRxF2.jpg.optimized.png" alt="Porsche Taycan">
+                <h3>Taycan</h3>
+            </div>  
+       </a>
+       <a href="https://configurator.porsche.com/en-ID/model-start/dealer/12442/macan" class="model-card-link">
+            <div class="model-card">
+                <img src="https://files.porsche.com/filestore/image/multimedia/none/pa3-t-modelimage-sideshot/model/7edcc317-7868-11ec-80e7-005056bbdc38/porsche-model.png" alt="Porsche Macan">
+                <h3>Macan</h3>
+            </div>
+       </a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Porsche Indonesia. Seluruh Hak Cipta Dilindungi.</p>
+    </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const loginBtn = document.getElementById('loginBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    // Cek status login
+    if(localStorage.getItem('isLoggedIn') === 'true') {
+      // Sembunyikan tombol login
+      loginBtn.style.display = 'none';
+      // Tampilkan tombol logout
+      logoutBtn.style.display = 'inline-block';
+    } else {
+      // Jika belum login, pastikan tombol login tampil dan logout sembunyi
+      loginBtn.style.display = 'inline-block';
+      logoutBtn.style.display = 'none';
+    }
+
+    // Logout handler
+    logoutBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      localStorage.removeItem('isLoggedIn'); // hapus status login
+      // reload halaman untuk update tampilan
+      window.location.reload();
+    });
+  });
+</script>
+</body>
+</html>
